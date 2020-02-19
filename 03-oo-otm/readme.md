@@ -1,0 +1,13 @@
+- model
+- domain
+- domain modelling
+- references vs values
+- one to many relationship: single model that
+  contains or keeps track of other models
+  - a tree has many leaves
+  - an organism has many cells
+  - the universe has many galaxies
+  - artist / song
+  - author / book
+  - user / tweet
+- draw.io
