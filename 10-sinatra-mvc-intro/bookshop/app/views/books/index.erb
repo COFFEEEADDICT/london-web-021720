@@ -1,0 +1,12 @@
+<h1>hi from index</h1>
+<h2>these are all of our books:</h2>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= book.title %> by <%= book.author%>
+    </li>
+  <% end %>
+</ul>
+
+
