@@ -1,0 +1,20 @@
+<h2><%= @book.title %></h2>
+
+<p>
+  <a href="/authors/<%= @author.id %>">
+    by <%= @author.name %>
+  </a>
+</p>
+
+<p><%= @book.snippet %></p>
+
+<p style="color: blue;">📝 Editing zone 📝</p>
+
+<a href='/books/<%= @book.id %>/edit'> edit me </a>
+
+<p style="color: red;">🚨 DANGER ZONE 🚨</p>
+
+<form action="/books/<%= @book.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="" value="Delete Book">
+</form>

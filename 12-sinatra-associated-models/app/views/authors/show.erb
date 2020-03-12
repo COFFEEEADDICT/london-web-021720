@@ -1,0 +1,27 @@
+<h2><%= @author.name %></h2>
+<p>they're <%=  @author.age %> years old</p>
+
+<p style="color: blue;">📝 Editing zone 📝</p>
+
+<ul>
+  <% @author.books.each do |book|  %>
+    <li>
+      <a href="/books/<%= book.id %>">
+        <%= book.title %>
+        <form action="/books/<%= book.id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" name="" value="🥵">
+        </form>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<a href='/authors/<%= @author.id %>/edit'> edit me </a>
+
+<p style="color: red;">🚨 DANGER ZONE 🚨</p>
+
+<form action="/authors/<%= @author.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" name="" value="Delete Author">
+</form>

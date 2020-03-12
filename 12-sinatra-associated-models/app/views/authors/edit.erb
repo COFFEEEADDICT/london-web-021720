@@ -1,0 +1,15 @@
+<h2>Edit <%= @author.name %></h2>
+
+<form action="/authors/<%= @author.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">Name</label>
+  <input type="text" name="name" value="<%= @author.name %>">
+  <br>
+
+  <label for="">Age</label>
+  <input type="number" name="age" value="<%= @author.age %>">
+  <br>
+
+  <input type="submit" name="" value="Save Author">
+</form>
