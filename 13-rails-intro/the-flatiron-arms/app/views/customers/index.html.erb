@@ -1,0 +1,6 @@
+<% @customers.each do |customer| %>
+    <div><%= customer.name %> is <%= customer.age %>.<%= link_to "view", customer %></div>
+<% end %>
+<a href="/customers/new">new customer</a>
+<a href="<%= new_customer_path %>">new customer</a>
+<%= link_to "new customer", new_customer_path %>

@@ -1,0 +1,9 @@
+<%= form_tag do %>
+    <%= text_field_tag "customer[name]" %>
+<% end %>
+
+<%= form_for @customer do |f| %>
+    <%= f.text_field :name %>
+    <%= f.number_field :age %>
+    <%= f.submit %>
+<% end %>
