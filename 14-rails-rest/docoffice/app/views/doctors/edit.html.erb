@@ -1,0 +1,14 @@
+<h2> edit doctor form </h2>
+
+<%= form_for @doctor do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :speciality %>
+  <%= f.text_field :speciality %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.submit 'get a new doc' %>
+<% end %>
