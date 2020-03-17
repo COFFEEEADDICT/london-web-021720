@@ -4,6 +4,10 @@
   <ul>
     <li>
       <%= link_to doctor.name, doctor %>
+      <p> 🚨 </p>
+      <%= form_tag doctor_path(doctor), method: :delete do %>
+        <%= submit_tag 'delete doctor' %>
+      <% end %>
     </li>
   </ul>
 <% end %>

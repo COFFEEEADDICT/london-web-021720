@@ -13,6 +13,18 @@
     <header>
       <%= link_to 'see all doctors', doctors_path %>
       <%= link_to 'create a new doctor', new_doctor_path %>
+      <div style="color: red;">
+        <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+            <ul>
+              <li>
+                <%= error %>
+              </li>
+            </ul>
+          <% end %>
+        <% end %>
+      </div>
+    <h1> 🏥 DOCTOR APP </h1>
     </header>
     <%= yield %>
   </body>

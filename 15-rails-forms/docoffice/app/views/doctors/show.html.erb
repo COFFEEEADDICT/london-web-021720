@@ -1,3 +1,5 @@
 <h2> <%= @doctor.name %> </h2>
 <p> age: <%= @doctor.age %></p>
 <p> speciality: <%= @doctor.speciality %></p>
+
+<%= link_to 'edit doctor', edit_doctor_path(@doctor) %>
