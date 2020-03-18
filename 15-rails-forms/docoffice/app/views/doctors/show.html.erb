@@ -2,4 +2,13 @@
 <p> age: <%= @doctor.age %></p>
 <p> speciality: <%= @doctor.speciality %></p>
 
+<h3>  </h3>
+<ul>
+  <% @doctor.patients.each do |patient| %>
+    <li>
+      <%= link_to patient.name, patient %>
+    </li>
+  <% end %>
+</ul>
+
 <%= link_to 'edit doctor', edit_doctor_path(@doctor) %>

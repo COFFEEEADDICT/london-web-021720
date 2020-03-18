@@ -11,17 +11,29 @@
 
   <body>
     <header>
-      <%= link_to 'see all doctors', doctors_path %>
-      <%= link_to 'create a new doctor', new_doctor_path %>
+    <ul>
+      <li>
+        <%= link_to 'see all doctors', doctors_path %>
+      </li>
+      <li>
+        <%= link_to 'create a new doctor', new_doctor_path %>
+      </li>
+      <li>
+        <%= link_to 'see all patients', patients_path %>
+      </li>
+      <li>
+        <%= link_to 'create a new patient', new_patient_path %>
+      </li>
+    </ul>
       <div style="color: red;">
         <% if flash[:errors] %>
-          <% flash[:errors].each do |error| %>
             <ul>
-              <li>
-                <%= error %>
-              </li>
+              <% flash[:errors].each do |error| %>
+                <li>
+                  <%= error %>
+                </li>
+              <% end %>
             </ul>
-          <% end %>
         <% end %>
       </div>
     <h1> 🏥 DOCTOR APP </h1>

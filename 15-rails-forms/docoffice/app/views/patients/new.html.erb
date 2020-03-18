@@ -1,0 +1,32 @@
+<h2> new patient form </h2>
+
+<%= form_for @patient do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.collection_select(:doctor_id, Doctor.all, :id, :name) %>
+
+  <%= f.submit 'create patient' %>
+<% end %>
+
+<h2> form when doctor doesn't exist </h2>
+
+<%= form_tag('/patients') do %>
+  <p> patient section: </p>
+
+  <%= label_tag :name %>
+  <%= text_field_tag '[patient]name' %>
+
+  <p> doctor section: </p>
+
+  <%= label_tag :name %>
+  <%= text_field_tag '[doctor]name' %>
+
+  <%= label_tag :age %>
+  <%= text_field_tag '[doctor]age' %>
+
+  <%= label_tag :speciality %>
+  <%= text_field_tag '[doctor]speciality' %>
+
+  <%= submit_tag 'create patient' %>
+<% end %>
