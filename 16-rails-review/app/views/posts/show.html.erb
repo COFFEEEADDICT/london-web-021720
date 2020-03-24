@@ -1,0 +1,7 @@
+<h1><%=  @post.title %></h1>
+
+<h2><%= @post.content %></h2>
+<hr>
+<h3>Likes: <%= @post.likes %></h3>
+
+<%= button_to "like", like_post_path %>

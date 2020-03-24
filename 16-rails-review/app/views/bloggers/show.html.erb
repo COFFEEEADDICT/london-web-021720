@@ -1,0 +1,5 @@
+<h1>Hi I'm <%= @blogger.name %></h1>
+
+<h2>My total likes: <%= @blogger.total_likes %></h2>
+
+<h3>My featured post: <%= link_to @blogger.feature_post.title, post_path(@blogger.feature_post) %></h3>
