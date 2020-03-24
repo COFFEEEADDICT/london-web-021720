@@ -1,0 +1,15 @@
+<h2>🥼 all doctors: </h2>
+
+<ul>
+  <% @doctors.each do |doctor|%>
+    <li>
+      <div style="display: inline;">
+        <%= link_to doctor.name, doctor %>
+        <p> age: <%= doctor.age %> </p>
+        <%= form_tag follow_doctor_path(doctor), class: 'form-inline' do %>
+          <%= submit_tag 'follow 🚨 doctor' %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>

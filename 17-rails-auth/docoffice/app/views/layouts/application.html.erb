@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docoffice</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+
+    <div>
+      <h3> auth stuff </h3>
+      <% if logged_in? %>
+        <p>
+          username: <%= current_user.username %>
+        <br>
+          user_type: <%= admin? ? 'admin' : 'user' %>
+        </p>
+        <%= form_tag('/logout') do %>
+          <%= submit_tag 'logout' %>
+        <% end %>
+      <% else %>
+        <h4> to log in, click: <%= link_to 'login', login_path %> </h4>
+      <% end %>
+    </div>
+
+    <div class='debug' style="display: none;">
+      <ul>
+        <li>
+          <%= session.id %>
+        </li>
+        <li>
+          <%= session[:current_time] %>
+        </li>
+        <li>
+          view_count: <%= session[:view_count] %>
+        </li>
+        <li>
+          viewed_doctors:
+          <% if session[:viewed_doctors].size == 0 %>
+            none
+          <% else %>
+            <%= session[:viewed_doctors].map { |d_id| (Doctor.find(d_id)).name} %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+    <ul>
+      <li>
+        <%= link_to 'see all doctors', doctors_path %>
+      </li>
+      <li>
+        <%= link_to 'see my doctors, sorted by age', my_doctors_path + "?sort=age" %>
+      </li>
+      <li>
+        <%= link_to 'see my doctors, aplhabetically', my_doctors_path + "?sort=az" %>
+      </li>
+      <li>
+        <%= link_to 'see all patients', patients_path %>
+      </li>
+      <% if admin? %>
+        <li>
+          <%= link_to 'create a new doctor', new_doctor_path %>
+        </li>
+        <li>
+          <%= link_to 'create a new patient', new_patient_path %>
+        </li>
+      <% end %>
+    </ul>
+
+      <div style="color: red;">
+        <% if flash[:errors] %>
+            <ul>
+              <% flash[:errors].each do |error| %>
+                <li>
+                  <%= error %>
+                </li>
+              <% end %>
+            </ul>
+        <% end %>
+      </div>
+    <h1> 🏥 DOCTOR APP </h1>
+    </header>
+    <%= yield %>
+  </body>
+</html>

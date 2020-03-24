@@ -1,0 +1,14 @@
+<h2>🥼 all doctors: </h2>
+
+<ul>
+  <% @doctors.each do |doctor|%>
+    <li>
+      <div style="display: inline;">
+        <%= link_to doctor.name, doctor %>
+        <%= form_tag doctor_path(doctor), method: :delete, class: 'form-inline' do %>
+          <%= submit_tag '🚨' %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
