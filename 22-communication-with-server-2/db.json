@@ -1,0 +1,11 @@
+{
+  "tweets": [
+    {
+      "id": 1,
+      "user": "trump",
+      "content": "corona isn't real",
+      "likes": 55568,
+      "retweets": 12040
+    }
+  ]
+}
